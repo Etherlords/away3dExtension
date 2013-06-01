@@ -1,23 +1,31 @@
 ﻿package away3d.materials
 {
 	import away3d.arcane;
+	
 	import away3d.cameras.Camera3D;
+	
 	import away3d.core.managers.Stage3DProxy;
+	
 	import away3d.materials.lightpickers.LightPickerBase;
+	
 	import away3d.materials.methods.BasicAmbientMethod;
 	import away3d.materials.methods.BasicDiffuseMethod;
 	import away3d.materials.methods.BasicNormalMethod;
 	import away3d.materials.methods.BasicSpecularMethod;
 	import away3d.materials.methods.EffectMethodBase;
 	import away3d.materials.methods.ShadowMapMethodBase;
+	
 	import away3d.materials.passes.SuperShaderPass;
+	
 	import away3d.textures.Texture2DBase;
-	import vcl.core.TLog;
-
+	
 	import flash.display.BlendMode;
-
+	
 	import flash.display3D.Context3D;
+	
 	import flash.geom.ColorTransform;
+	
+
 
 	use namespace arcane;
 
@@ -35,12 +43,7 @@
 		 */
 		public function SinglePassMaterialBase()
 		{
-			if (!TLog.DEBUG_VARS['Material' + this])
-			{
-				TLog.DEBUG_VARS['Material' + this] = 1;
-			}
-			else
-				TLog.DEBUG_VARS['Material' + this] += 1;
+			
 				
 			super();
 			addPass(_screenPass = new SuperShaderPass(this));
