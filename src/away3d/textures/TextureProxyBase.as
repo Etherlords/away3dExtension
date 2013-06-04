@@ -6,11 +6,10 @@ package away3d.textures
 	import away3d.library.assets.AssetType;
 	import away3d.library.assets.IAsset;
 	import away3d.library.assets.NamedAssetBase;
-	import vcl.core.TLog;
-	
 	import flash.display3D.Context3D;
 	import flash.display3D.Context3DTextureFormat;
 	import flash.display3D.textures.TextureBase;
+	
 
 	use namespace arcane;
 
@@ -27,12 +26,7 @@ package away3d.textures
 
 		public function TextureProxyBase()
 		{
-			if (!TLog.DEBUG_VARS['Texture' + this])
-			{
-				TLog.DEBUG_VARS['Texture' + this] = 1;
-			}
-			else
-				TLog.DEBUG_VARS['Texture' + this] += 1;
+			
 				
 			_textures = new Vector.<TextureBase>(8);
 			_dirty = new Vector.<Context3D>(8);

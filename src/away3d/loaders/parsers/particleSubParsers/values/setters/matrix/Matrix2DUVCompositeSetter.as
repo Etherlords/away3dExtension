@@ -28,7 +28,7 @@ package away3d.loaders.parsers.particleSubParsers.values.setters.matrix
 		{
 			var matrix:Matrix = new Matrix;
 			matrix.scale(1 / _numColumns, 1 / _numRows);
-			var index:int = _selectedValue.generateOneValue(index, total) % (_numColumns * _numRows);
+			index = _selectedValue.generateOneValue(index, total) % (_numColumns * _numRows);
 			//index %= _numColumns * _numRows;
 			var row:int = index / _numColumns;
 			var column:int = index % _numColumns;

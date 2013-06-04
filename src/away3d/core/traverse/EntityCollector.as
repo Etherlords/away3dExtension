@@ -221,6 +221,7 @@ package away3d.core.traverse
 			_numTriangles += renderable.numTriangles;
 
 			material = renderable.material;
+			trace(renderable);
 			if (material) {
 				var item : RenderableListItem = _renderableListItemPool.getItem();
 				item.renderable = renderable;
@@ -231,7 +232,7 @@ package away3d.core.traverse
 				var dy : Number = _entryPoint.y - entity.y;
 				var dz : Number = _entryPoint.z - entity.z;
 				// project onto camera's z-axis
-				item.zIndex = dx * _cameraForward.x + dy * _cameraForward.y + dz * _cameraForward.z;
+				item.zIndex = dx * _cameraForward.x + dy * _cameraForward.y + dz * _cameraForward.z - 5000;
 				if (entity is Sprite3D)
 					item.zIndex += -entity.position.z + entity.zOffset + 1000000;
 				item.renderSceneTransform = renderable.getRenderSceneTransform(_camera);
